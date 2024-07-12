@@ -3,6 +3,7 @@
 int main
 {
     int a = 1;
-    std::string b = "test"
+    std::string b = "test";
     LOGI("TEST LOGGER{} {}" ,a ,b);
+    LOGE("TEST LOGE");
 }
