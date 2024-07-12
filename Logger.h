@@ -36,7 +36,7 @@ public:
     }
 
     template <typename... Args>
-    void log(LogLevel msgLevel, const std::string format, const Args&... args)
+    void log(LogLevel msgLevel, const std::string &format, const Args&... args)
     {
         std::lock_guard<std::mutex> guard(m_mutex);
         if (msgLevel >= level_)
@@ -89,7 +89,7 @@ private:
             return;
         }
         ss << format.substr(0, pos) << value;
-        formatString(ss, format.substr(pos + 1), rest...);
+        formatString(ss, format.substr(pos + 2), rest...);
     }
 
     template <typename... Args>
